@@ -9,19 +9,14 @@ spring:
   application:
     name: graphqlpractice
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${RDS_ENDPOINT}:5432/${RDS_DB}?serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${RDS_ENDPOINT}:3306/${RDS_DB}?serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MariaDBDialect
-          format_sql: true
-    show-sql: true
-    database: postgresql
+
     jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: Asia/Seoul
