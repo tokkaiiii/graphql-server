@@ -32,6 +32,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-websocket")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation ("org.springframework.boot:spring-boot-starter-aop")
+    implementation ("org.springframework.boot:spring-boot-starter-actuator")
+    implementation ("com.googlecode.json-simple:json-simple:1.1.1")
+    implementation ("org.json:json:20220924")
+    implementation ("org.apache.commons:commons-text:1.10.0")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.projectlombok:lombok")
@@ -40,6 +45,7 @@ dependencies {
     testImplementation("org.springframework:spring-webflux")
     testImplementation("org.springframework.graphql:spring-graphql-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
 }
 
 kotlin {
