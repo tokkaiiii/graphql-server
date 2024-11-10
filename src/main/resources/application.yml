@@ -1,1 +1,29 @@
-spring.application.name=graphqlpractice
+server:
+  port: 8081
+spring:
+  graphql:
+    schema:
+      file-extensions: graphql
+    websocket:
+      path: graphql
+  application:
+    name: graphqlpractice
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${RDS_ENDPOINT}:5432/${RDS_DB}?serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MariaDBDialect
+          format_sql: true
+    show-sql: true
+    database: postgresql
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: Asia/Seoul
+      serialization:
+        fail-on-empty-beans: false
